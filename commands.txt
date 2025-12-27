@@ -1,1 +1,0 @@
-docker exec -it crypto_etl_pipeline2-airflow-webserver-1 bash
