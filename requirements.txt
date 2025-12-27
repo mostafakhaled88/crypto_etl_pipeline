@@ -1,0 +1,23 @@
+# --- Core HTTP & API Handling ---
+requests==2.31.0
+urllib3==2.0.7
+# Useful for handling asynchronous API calls to multiple crypto exchanges
+httpx==0.27.0 
+
+# --- Data Manipulation ---
+pandas==2.1.4
+numpy==1.26.2
+# Lightweight validation for your crypto JSON payloads
+pydantic==2.5.2 
+
+# --- Database & Connectors ---
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.23
+
+# --- Crypto Specific (Optional but Recommended) ---
+# The industry standard for interacting with 100+ crypto exchanges
+ccxt==4.2.0 
+
+# --- Data Quality ---
+# Essential for ensuring your price data isn't null or zero
+soda-core-contracts==3.0.45

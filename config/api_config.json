@@ -1,0 +1,58 @@
+{
+  "api_source": {
+    "coingecko": {
+      "base_url": "https://api.coingecko.com/api/v3",
+      "endpoints": {
+        "simple_price": "/simple/price"
+      },
+      "rate_limit": {
+        "requests_per_minute": 50,
+        "sleep_seconds_min": 1.2
+      },
+      "coins_to_track": [
+        {"id": "bitcoin", "symbol": "BTC"},
+        {"id": "ethereum", "symbol": "ETH"},
+        {"id": "cardano", "symbol": "ADA"},
+        {"id": "solana", "symbol": "SOL"},
+        {"id": "dogecoin", "symbol": "DOGE"}
+      ],
+      "vs_currencies": ["usd", "eur"]
+    },
+
+    "coincap": {
+      "base_url": "https://api.coincap.io/v2",
+      "endpoints": {
+        "assets": "/assets"
+      },
+      "param_map": {
+        "ids": "ids",
+        "vs_currency": null
+      },
+      "rate_limit": {
+        "requests_per_minute": 100,
+        "sleep_seconds_min": 0.7
+      },
+      "coins_to_track": [
+        {"id": "bitcoin", "symbol": "BTC"},
+        {"id": "ethereum", "symbol": "ETH"}
+      ],
+      "vs_currencies": ["usd"]
+    }
+  },
+
+  "data_warehouse": {
+    "bronze_table": "bronze_raw_prices",
+    "silver_table": "silver_clean_prices",
+    "gold_table": "gold_daily_metrics"
+  },
+
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+
+  "pipeline_settings": {
+    "retry_attempts": 2,
+    "retry_delay_seconds": 10
+  }
+}
